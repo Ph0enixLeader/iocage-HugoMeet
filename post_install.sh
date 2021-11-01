@@ -15,20 +15,6 @@ pw useradd -n hugomeetserver -u 199 -G www -d /nonexistent -s /usr/local/bin/bas
 hugomeetserver
 EOF
 
-# Enable the service
-chmod +x *.sh
-chmod +x /usr/local/etc/rc.d/HugoMeet
-sysrc -f /etc/rc.conf HugoMeet_enable="YES"
-
-# Start the service
-service HugoMeet start
-
-service HugoMeet status >/dev/null 2>&1
-if [ $? -ne 0 ] ; then
-  echo "ERROR: Failed to start service"
-  exit 1
-fi
-
 echo
 cat <<EOF > /root/PLUGIN_INFO
 #---------------------------------------------------------------------#
