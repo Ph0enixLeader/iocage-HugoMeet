@@ -1,7 +1,6 @@
 #!/bin/sh
 
-mkdir -p /usr/local/www		
-mkdir -p /usr/local/etc/rc.d		
+mkdir -p /usr/local/www			
 
 # Clone source from official HugoMeet repository
 cd /usr/local/www
