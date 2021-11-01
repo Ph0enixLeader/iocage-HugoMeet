@@ -5,7 +5,7 @@ mkdir -p /usr/local/etc/rc.d
 
 # Clone source from official HugoMeet repository
 cd /usr/local/www
-sudo git clone git://github.com/Ph0enixLeader/HugoMeetDev --quiet --depth 1 HugoMeet
+#sudo git clone git://github.com/Ph0enixLeader/HugoMeetDev --quiet --depth 1 HugoMeet
 if [ $? -ne 0 ] ; then
   echo "ERROR: Failed to get source from HugoMeet Repository"
   exit 1
