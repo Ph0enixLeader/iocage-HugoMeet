@@ -6,10 +6,10 @@ mkdir -p /usr/local/etc/rc.d
 # Clone source from official HugoMeet repository
 cd /usr/local/www
 git clone git://github.com/Ph0enixLeader/HugoMeetDev --quiet --depth 1 HugoMeet
-if [ $? -ne 0 ] ; then
-  echo "ERROR: Failed to get source from HugoMeet Repository"
-  exit 1
-fi
+#if [ $? -ne 0 ] ; then
+#  echo "ERROR: Failed to get source from HugoMeet Repository"
+#  exit 1
+#fi
 
 # Create user mcserver
 pw useradd -n hugomeetserver -u 199 -G www -d /nonexistent -s /usr/local/bin/bash -h 0 <<EOF
@@ -25,10 +25,10 @@ sysrc -f /etc/rc.conf HugoMeet_enable="YES"
 service HugoMeet start
 
 service HugoMeet status >/dev/null 2>&1
-if [ $? -ne 0 ] ; then
-  echo "ERROR: Failed to start service"
-  exit 1
-fi
+#if [ $? -ne 0 ] ; then
+#  echo "ERROR: Failed to start service"
+#  exit 1
+#fi
 
 echo
 cat <<EOF > /root/PLUGIN_INFO
