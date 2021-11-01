@@ -1,0 +1,23 @@
+{
+	"servicerestart":"service HugoMeet restart",
+	"serviceget": "/usr/local/bin/HugoMeet",
+	"serviceset": "/usr/local/bin/HugoMeet",
+	"options":
+	{
+		"port": {
+			"type": "int",
+			"name": "WebUI Port",
+			"description": "Port for HugoMeet web admin portal",
+			"range": "1024-32000",
+			"default": "3000",
+			"requirerestart": true
+		},
+		"sslmode": {
+			"type": "bool",
+			"name": "Use SSL",
+			"description": "Use HTTPS to connect to web admin portal",
+			"default": false,
+			"requirerestart": true
+		}
+	}
+}
