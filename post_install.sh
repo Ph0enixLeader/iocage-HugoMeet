@@ -12,26 +12,26 @@ if [ $? -ne 0 ] ; then
 fi
 
 # Create user mcserver
-#pw useradd -n hugomeetserver -u 199 -G www -d /nonexistent -s /usr/local/bin/bash -h 0 <<EOF
-#hugomeetserver
-#EOF
+pw useradd -n hugomeetserver -u 199 -G www -d /nonexistent -s /usr/local/bin/bash -h 0 <<EOF
+hugomeetserver
+EOF
 
 # Enable the service
-#chmod +x *.sh
-#chmod +x /usr/local/etc/rc.d/HugoMeet
-#sysrc -f /etc/rc.conf HugoMeet_enable="YES"
+chmod +x *.sh
+chmod +x /usr/local/etc/rc.d/HugoMeet
+sysrc -f /etc/rc.conf HugoMeet_enable="YES"
 
 # Start the service
-#service HugoMeet start
+service HugoMeet start
 
-#service HugoMeet status >/dev/null 2>&1
-#if [ $? -ne 0 ] ; then
-#  echo "ERROR: Failed to start service"
-#  exit 1
-#fi
+service HugoMeet status >/dev/null 2>&1
+if [ $? -ne 0 ] ; then
+  echo "ERROR: Failed to start service"
+  exit 1
+fi
 
-#echo
-#cat <<EOF > /root/PLUGIN_INFO
+echo
+cat <<EOF > /root/PLUGIN_INFO
 #---------------------------------------------------------------------#
 # Getting started with the HugoMeet plugin
 #---------------------------------------------------------------------#
@@ -39,6 +39,6 @@ fi
 #HugoMeet is a server front-end to ease talk video.
 #For more information, see https://github.com/hcabel/HugoMeet
 
-#EOF
+EOF
 
-#cat /root/PLUGIN_INFO
+cat /root/PLUGIN_INFO
